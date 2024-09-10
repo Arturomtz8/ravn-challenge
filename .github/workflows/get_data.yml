@@ -33,5 +33,5 @@ jobs:
         poetry run prefect cloud workspace set --workspace "${{secrets.PREFECT_WORKSPACE}}"
     - name: Run posts scraper
       run: |
-        poetry run python flows/bus_and_luas.py
+        poetry run python flows/main.py
 
