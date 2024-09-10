@@ -1,0 +1,37 @@
+name: Get Dublin transport info daily
+
+# on:
+#   schedule:
+#     - cron: '0 6 * * *'
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Run image
+      uses: abatilo/actions-poetry@v2
+      with:
+        poetry-version: "1.4.2"
+    - name: Install poetry dependencies
+      run: poetry install
+    - name: Run black
+      run: |
+        poetry run black .
+    - name: Prefect Cloud login
+      run: |
+        poetry run prefect config set PREFECT_API_KEY=${{secrets.PREFECT_API_KEY}} 
+        poetry run prefect cloud workspace set --workspace "${{secrets.PREFECT_WORKSPACE}}"
+    - name: Run posts scraper
+      run: |
+        poetry run python flows/bus_and_luas.py
+

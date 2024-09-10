@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ravn"
+version = "0.1.0"
+description = ""
+authors = ["Arturomtz8 <arturo.mtz8@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.2"
+requests = "^2.32.3"
+openpyxl = "^3.1.5"
+prefect = "^3.0.1"
+prefect-gcp = "^0.6.0"
+pandas-gbq = "^0.23.1"
+polars = "^1.6.0"
+fastexcel = "^0.11.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
