@@ -58,7 +58,7 @@ def download_three_previous_months_bikes_stations():
         combined_df = pl.concat([combined_df, df])
         print(f"combined and going in {i} range")
 
-    return combined_df
+    return combined_df.to_pandas()
 
 
 @task(log_prints=True)
