@@ -28,11 +28,8 @@ The pipeline runs every day at 6:00 am. But notice in the commented code at [.gi
     <img src="screenshots/query.png">
 </p>
 
-The data could be further edited and processed using [dbt](https://docs.getdbt.com/docs/build/documentation)
-
-
 ## Challenges
 One of the main challenges was creating a function that could be reutilized for downloading the majority of data sources. Other challenge was cleaning the data (long column names aren't accepted in Big query) without losing data integrity.
 The functions created enable the search for data from other years for luas, bus, and weather.
 
-Things that I would have improved: using dbt for creating views and testing data integrity. Using google looker studio for having a graphical representation of the data.
+Things that I would have improved: using [dbt](https://docs.getdbt.com/docs/build/documentation) for creating views and testing data integrity. Using google looker studio for having a graphical representation of the data.

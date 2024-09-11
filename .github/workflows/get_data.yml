@@ -1,13 +1,13 @@
 name: Get Dublin transport info daily
 
-# on:
-#   schedule:
-#     - cron: '0 6 * * *'
-
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '0 6 * * *'
+
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
   build:
